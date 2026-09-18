@@ -9,10 +9,17 @@ HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizador ANTEX (.atx) - IGS</title>
+    
+    <!-- Script de verificación de Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6961767322971888"
+         crossorigin="anonymous"></script>
+
     <style>
+        <style>
         :root {
             --primary: #1b365d;
             --secondary: #00a8cc;
@@ -123,7 +130,9 @@ HTML_TEMPLATE = """
             margin: 20px 0;
         }
     </style>
-</head>
+
+    </style>
+</head></head>
 <body>
     <div class="container">
         <header>
@@ -150,6 +159,20 @@ HTML_TEMPLATE = """
             <div class="antenna-list" id="antennaList"></div>
         </div>
     </div>
+    <!-- Bloque de Anuncio de Google AdSense -->
+<div style="text-align: center; margin: 20px 0;">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6961767322971888"
+         crossorigin="anonymous"></script>
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-6961767322971888"
+         data-ad-slot="AQUÍ_EL_ID_DE_TU_BLOQUE_DE_ANUNCIO"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+</div>
 
     <script>
         const dropZone = document.getElementById('dropZone');
