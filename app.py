@@ -270,6 +270,10 @@ HTML_TEMPLATE = """
 @app.route('/')
 def index():
     return render_template_string(HTML_TEMPLATE)
+@app.route('/ads.txt')
+def ads_txt():
+    # Reemplaza esta línea con el texto exacto que te pide Google AdSense en su panel
+    return "google.com, pub-6961767322971888, DIRECT, f08c47fec0942fa0"
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
