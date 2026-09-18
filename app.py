@@ -18,7 +18,6 @@ HTML_TEMPLATE = """
          crossorigin="anonymous"></script>
 
     <style>
-        <style>
         :root {
             --primary: #1b365d;
             --secondary: #00a8cc;
@@ -129,8 +128,6 @@ HTML_TEMPLATE = """
             margin: 20px 0;
         }
     </style>
-
-    </style>
 </head>
 <body>
     <div class="container">
@@ -150,6 +147,21 @@ HTML_TEMPLATE = """
 
         <div id="loader" class="loader">Procesando archivo ANTEX, por favor espera...</div>
 
+        <!-- Bloque de Anuncio de Google AdSense -->
+        <div style="text-align: center; margin: 20px 0;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6961767322971888"
+                 crossorigin="anonymous"></script>
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-6961767322971888"
+                 data-ad-slot="AQUÍ_EL_ID_DE_TU_BLOQUE_DE_ANUNCIO"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
         <div id="resultsContainer" style="display: none;">
             <div class="controls">
                 <input type="text" id="searchInput" placeholder="Filtrar por nombre de antena o número de serie..." onkeyup="filterAntennas()">
@@ -158,20 +170,6 @@ HTML_TEMPLATE = """
             <div class="antenna-list" id="antennaList"></div>
         </div>
     </div>
-    <!-- Bloque de Anuncio de Google AdSense -->
-<div style="text-align: center; margin: 20px 0;">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6961767322971888"
-         crossorigin="anonymous"></script>
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-6961767322971888"
-         data-ad-slot="AQUÍ_EL_ID_DE_TU_BLOQUE_DE_ANUNCIO"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>
-         (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-</div>
 
     <script>
         const dropZone = document.getElementById('dropZone');
@@ -301,7 +299,6 @@ def upload_file():
                         current_antenna['name'] = parts[0]
                         current_antenna['radome'] = parts[1] if len(parts) > 1 else ''
                     if len(parts) >= 3:
-                        # Extraer SN si existe al final de la línea
                         current_antenna['serial_number'] = " ".join(parts[2:])
                 elif 'METH / BY / # / PCV' in line:
                     current_antenna['calibration_method'] = line[:20].strip()
